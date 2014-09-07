@@ -5,7 +5,7 @@
  *
  * This file contains some basic control functions for the dual L9110S driver board.
  *
- * The default behavior is to speed up and slow down motor A in each direction,
+ * The default behavior is to speed up and slow down both motors in each direction,
  *  then wait for two seconds.
  **/
 
@@ -72,23 +72,27 @@ void stop_all_motors(){
 ///////////////////////////////////////////////////////
 void loop() {
   int i;
-  // forwards:
+  // A forwards:
   for(i = 0; i < 255; i++){
      move_A(0, i);
+     move_B(0, i);
      delay(10);
   }
   for(i = 255; i >= 0; i--){
      move_A(0, i);
+     move_B(0, i);
      delay(10);
   }
   
-  // backwards:
+  // A backwards:
   for(i = 0; i < 255; i++){
      move_A(1, i);
+     move_B(1, i);
      delay(10);
   }
   for(i = 255; i >= 0; i--){
      move_A(1, i);
+     move_B(1, i);
      delay(10);
   }  
 
