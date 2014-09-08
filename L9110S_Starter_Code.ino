@@ -72,7 +72,7 @@ void stop_all_motors(){
 ///////////////////////////////////////////////////////
 void loop() {
   int i;
-  // A forwards:
+  // Both forwards:
   for(i = 0; i < 255; i++){
      move_A(0, i);
      move_B(0, i);
@@ -84,7 +84,7 @@ void loop() {
      delay(10);
   }
   
-  // A backwards:
+  // Both backwards:
   for(i = 0; i < 255; i++){
      move_A(1, i);
      move_B(1, i);
